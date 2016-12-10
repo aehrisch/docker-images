@@ -6,7 +6,7 @@ cat > /etc/apache2/conf.d/otp.conf <<EOF
 
 LoadModule authn_otp_module "/usr/lib/apache2/mod_authn_otp.so"
 
-<Location "/auth">
+<Directory "/auth">
    AuthType           basic
    AuthName           "${OTP_REALM}"
    AuthBasicProvider  OTP
@@ -14,7 +14,7 @@ LoadModule authn_otp_module "/usr/lib/apache2/mod_authn_otp.so"
  
    OTPAuthUsersFile   "/otp/otp-users.txt"
    OTPAuthMaxLinger   ${OTP_MAX_LINGER}
-</Location>
+</Directory>
 
 EOF
 

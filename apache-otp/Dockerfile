@@ -12,6 +12,8 @@ COPY start.sh /
 EXPOSE 80
 
 RUN /bin/ash /tmp/install.sh && \
-    rm -f /tmp/install.sh
+    rm -f /tmp/install.sh && \
+    mkdir -p /var/www/localhost/htdocs/auth && \
+    chown apache:apache /var/www/localhost/htdocs
 
 CMD /bin/ash /start.sh
