@@ -6,7 +6,7 @@ cat > /etc/apache2/conf.d/otp.conf <<EOF
 
 LoadModule authn_otp_module "/usr/lib/apache2/mod_authn_otp.so"
 
-<Directory "/auth">
+<Directory "/var/www/localhost/htdocs/auth">
    AuthType           basic
    AuthName           "${OTP_REALM}"
    AuthBasicProvider  OTP
